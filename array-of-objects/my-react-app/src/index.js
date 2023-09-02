@@ -16,6 +16,12 @@ const smartPeople = [
 const element = (
     <ul>
         //your code here
+
+         {smartPeople.map((person, index) => (
+            <li key={index}>
+                Name: {person.name}, Age: {person.age}, IQ: {person.IQ}
+            </li>
+        ))}
     </ul>
 );
 
