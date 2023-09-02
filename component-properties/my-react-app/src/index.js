@@ -1,5 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+ 
+import Card from './Card'; // Import your Card component
+import 'antd/dist/reset.css'; // Import Ant Design CSS
+
+
 
 const cards = [
     {
@@ -24,7 +29,15 @@ const cards = [
 
 const element = (
     <div>
-        
+        {cards.map((person, index) => (
+      <Card
+        key={index}
+        title={person.title}
+        description={person.description}
+        avatar={person.avatar}
+        cover={person.cover}
+      />
+    ))}
     </div>
 );
 
