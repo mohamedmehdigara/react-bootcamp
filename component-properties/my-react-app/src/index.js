@@ -1,9 +1,8 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
- 
+import {createRoot, render } from "react-dom/client" 
 import Card from './Card'; // Import your Card component
 import 'antd/dist/reset.css'; // Import Ant Design CSS
-
+import ReactDOM from "react-dom"
 
 
 const cards = [
@@ -41,4 +40,27 @@ const element = (
     </div>
 );
 
-ReactDOM.render(element, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container);
+
+ReactDOM.render(
+    <React.StrictMode>
+      <Card />
+    </React.StrictMode>,
+  );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
