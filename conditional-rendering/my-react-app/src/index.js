@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MyAlert from "./MyAlert"
+import MyAlert from "./MyAlert";
 
 const element = (
     <div>
