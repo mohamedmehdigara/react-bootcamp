@@ -1,9 +1,8 @@
 import React from 'react';
-import {createRoot, render } from "react-dom/client" 
-import Card from './Card'; // Import your Card component
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter as Router
 import 'antd/dist/reset.css'; // Import Ant Design CSS
-import ReactDOM from "react-dom"
-
+import Card from './Card'; // Import your Card component
 
 const cards = [
     {
@@ -26,29 +25,26 @@ const cards = [
     }
 ];
 
-const element = (
+const App = () => (
     <div>
-        {cards.map((person, index) => (
-      <Card
-        key={index}
-        title={person.title}
-        description={person.description}
-        avatar={person.avatar}
-        cover={person.cover}
-      />
-    ))}
+        {cards && cards.map((person, index) => (
+            <Card
+                key={index}
+                title={person.title}
+                description={person.description}
+                avatar={person.avatar}
+                cover={person.cover}
+            />
+        ))}
     </div>
 );
 
-const container = document.getElementById('root');
-const root = createRoot(container);
-
 ReactDOM.render(
-    <React.StrictMode>
-      <Card />
-    </React.StrictMode>,
-  );
-
+    <Router>
+        <App />
+    </Router>,
+    document.getElementById('root')
+);
 
 
 
