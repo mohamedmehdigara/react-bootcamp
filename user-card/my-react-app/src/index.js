@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Card, Avatar } from 'antd';
-import "antd/dist/antd.css";
+import "antd/dist/reset.css";
 
 const { Meta } = Card;
 
@@ -12,10 +12,22 @@ const card = {
     cover: 'https://media.vanityfair.com/photos/574f453fbdf148e4205f29df/16:9/w_1200,h_630,c_limit/hive-contributor-profile-elon-musk.jpg'
 };
 
-const element = (
-    <div>
-        //your code here
-    </div>
-);
-
-ReactDOM.render(element, document.getElementById('root'));
+const App = () => {
+    return (
+      <div>
+        <Card
+          title={card.title}
+          cover={<img alt="User Cover" src={card.cover} />}
+          style={{ width: 300 }}
+        >
+          <Card.Meta
+            avatar={<img alt="User Avatar" src={card.avatar} />}
+            description={card.description}
+          />
+        </Card>
+      </div>
+    );
+  };
+  
+  ReactDOM.render(<App />, document.getElementById('root'));
+  
